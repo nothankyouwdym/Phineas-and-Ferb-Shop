@@ -1,7 +1,6 @@
 import { Component } from "react"
-import OrderTable from "./OrderTable"
-
 import data from "./Data/data"
+import OrderTable from "./OrderTable"
 
 class Order extends Component{
   state = {
@@ -9,27 +8,26 @@ class Order extends Component{
   }
   render(){
 
-   handleChange = (e) =>{
-    this.setState({item: [...this.state.item,e.target.value]})
-  }
+
   return(
     <section>
       <h1>Order Page</h1>
-   
-        {this.getData}
-
-      <OrderTable props={this.state.item}/>
+      <select multiple onClick={this.handleChange}>
+        {data.map((row,index) =>{
+          return(
+            <option value={row.name} id={index}>{row.name}</option>
+          )
+        })}
+      </select>
+      <OrderTable props={this.state}/>
     </section>
   )
   }
 
-
-  getData = () =>{
-    data.map((row,index) =>{
-      return(
-        <option value={row.name} id={index}>{row.name}</option>
-      )
-    })
+  handleChange = (e) =>{
+    this.setState(({
+      item: [...this.state.item,e.target.value]
+    }))
   }
 }
 
