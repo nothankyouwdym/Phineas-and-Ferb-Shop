@@ -1,5 +1,4 @@
 import data from "./Data/data"
-let totalPrice = 0;
 
 const OrderTable = (props) =>{
   return(
@@ -8,7 +7,6 @@ const OrderTable = (props) =>{
         <THead />
         <TBody props={props}/>
       </table>
-      <h1>Total Price: {totalPrice}</h1>
     </section>  
   )
 }
@@ -29,7 +27,7 @@ const TBody = (props) =>{
     return(
       <tr key={index}>
         <th>{row}</th>
-        <th>{getTotalPrice(row,getPrices(row))}</th>
+        <th>{getPrices(row)}</th>
       </tr>
     )
   })
@@ -47,9 +45,7 @@ const getPrices = (row) =>{
 }
 
 
-const getTotalPrice = (row,getPrices) =>{
-  totalPrice = totalPrice + getPrices(row)
-}
+
 
 
 
