@@ -3,10 +3,13 @@ let totalPrice = 0;
 
 const OrderTable = (props) =>{
   return(
-    <table>
-      <THead />
-      <TBody props={props}/>
-    </table>
+    <section>
+      <table>
+        <THead />
+        <TBody props={props}/>
+      </table>
+      <h1>Total Price: {totalPrice}</h1>
+    </section>  
   )
 }
 
