@@ -69,8 +69,10 @@ hr {
 }
 
 span{
-  display: flex;
+  display: inline-flex;
   font-size: larger;
+  margin-inline: 1rem;
+  padding: 1rem 10px;
 }
 
 /**
