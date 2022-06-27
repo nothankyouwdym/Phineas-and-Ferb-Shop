@@ -16,6 +16,7 @@ const THead = () =>{
       <tr>
         <th>Item</th>
         <th>Price</th>
+        <th>Deselect</th>
       </tr>
     </thead>
   )
@@ -27,6 +28,7 @@ const TBody = (props) =>{
       <tr key={index}>
         <th>{row}</th>
         <th>{getPrices(row)}</th>
+        <th><button onClick={handleClick}>Deselect</button></th>
       </tr>
     )
   })
@@ -41,6 +43,12 @@ const getPrices = (row) =>{
         return data[i].price
       }
   }
+}
+
+const handleClick = () =>{
+  return(
+    <h1>Hola!</h1>
+  )
 }
 
 
