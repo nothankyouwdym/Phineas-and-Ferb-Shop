@@ -1,26 +1,34 @@
-import { useState } from "react"
+import { Component } from "react"
 import OrderTable from "./OrderTable"
 
-const Order = () =>{
+import data from "./Data/data"
 
-  const [item,setItem] = useState([]) 
+class Order extends Component{
+  state = {
+    item: []
+  }
+  render(){
 
-  const handleChange = (e) =>{
-    setItem([...item,e.target.value])
+   handleChange = (e) =>{
+    this.setState({item: [...this.state.item,e.target.value]})
   }
   return(
     <section>
       <h1>Order Page</h1>
-      <select multiple onClick={handleChange}>
-        <option value="Hat">Hat</option>
-        <option value="T-Shirt">T-Shirt</option>
-        <option value="Dog Food">Dog Food</option>
-        <option value="Cat Food">Cat Food</option>
-      </select>
-
-      <OrderTable props={item}/>
+      {this.getData}
     </section>
   )
+  }
+
+
+  getData = () =>{
+    const rows = data.map((row,index) =>{
+      return(
+        <option value={row.name} id={index}>{row.name}</option>
+      )
+    })
+    return <select multiple onClick={this.handleChange}>{rows}</select>
+  }
 }
 
 export default Order

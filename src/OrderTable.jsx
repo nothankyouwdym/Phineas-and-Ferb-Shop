@@ -1,7 +1,7 @@
 
 
 
-const OrderTable = () =>{
+const OrderTable = (props) =>{
   return(
     <section>
       <table>
@@ -15,8 +15,12 @@ const THead = () =>{
   return(
     <thead>
       <tr>
-        <th>Item</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>In Stock</th>
+        <th>Quantity</th>
       </tr>
     </thead>
   )
 }
+
