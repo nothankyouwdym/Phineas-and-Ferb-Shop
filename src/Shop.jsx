@@ -1,10 +1,11 @@
-
+import data from "./Data/data"
 
 
 const Shop = () =>{
   return(
     <table>
       <THead />
+      <TBody />
     </table>
   )
 }
@@ -20,6 +21,19 @@ const THead = () =>{
       </tr>
     </thead>
   )
+}
+
+
+const TBody = () =>{
+  const rows = data.map((row,index) =>{
+    return(
+      <tr key={index}>
+        <td>{row.name}</td>
+      </tr>
+    )
+  })
+
+  return <tbody>{rows}</tbody>
 }
 
 
