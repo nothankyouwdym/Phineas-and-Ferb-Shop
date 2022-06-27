@@ -1,15 +1,12 @@
-
-
-const OrderTable = (props) =>{
+const OrderTable = () =>{
   return(
     <table>
-      <Thead />
-      <Tbody props={props}/>
+
     </table>
   )
 }
 
-const Thead = () =>{
+const THead = () =>{
   return(
     <thead>
       <tr>
@@ -17,19 +14,6 @@ const Thead = () =>{
       </tr>
     </thead>
   )
-}
-
-
-const Tbody = (props) =>{
-  const rows = props.props.item.map((row,index) =>{
-    return(
-      <tr key={index}>
-        <th>{row}</th>
-      </tr>
-    )
-  })
-
-  return <tbody>{rows}</tbody>
 }
 
 
