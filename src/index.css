@@ -73,6 +73,7 @@ span{
   font-size: larger;
   margin-inline: 1rem;
   padding: 1rem 10px;
+  font-family: cursive,cursive;
 }
 
 /**
@@ -388,6 +389,7 @@ body {
   color: #404040;
   background: white;
   font-size: 1rem;
+  font-family: cursive,cursive;
 }
 
 p,
@@ -413,7 +415,7 @@ h4,
 h5 {
   margin: 1.5rem 0;
   font-weight: 600;
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: cursive,cursive;
   line-height: 1.2;
   color: #404040;
 }
