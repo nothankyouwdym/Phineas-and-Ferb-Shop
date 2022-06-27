@@ -1,5 +1,5 @@
 import data from "./Data/data"
-
+let totalPrice = 0;
 
 const OrderTable = (props) =>{
   return(
@@ -12,12 +12,12 @@ const OrderTable = (props) =>{
 
 const THead = () =>{
   return(
-    <thead>
-      <tr>
-        <th>Item</th>
-        <th>Price</th>
-      </tr>
-    </thead>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+        </tr>
+      </thead>
   )
 }
 
@@ -27,7 +27,8 @@ const TBody = (props) =>{
       <tr key={index}>
         <th>{row}</th>
         <th>{getPrices(row)}</th>
-      </tr>
+      </tr>,
+      getTotalPrice(row)
     )
   })
 
@@ -43,6 +44,10 @@ const getPrices = (row) =>{
   }
 }
 
+
+const getTotalPrice = (row) =>{
+  totalPrice = totalPrice + getPrices(row)
+}
 
 
 
