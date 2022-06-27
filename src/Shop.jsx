@@ -1,6 +1,5 @@
 import data from "./Data/data"
 
-
 const Shop = () =>{
   return(
     <table>
@@ -28,7 +27,10 @@ const TBody = () =>{
   const rows = data.map((row,index) =>{
     return(
       <tr key={index}>
-        <td>{row.name}</td>
+        <th>{row.name}</th>
+        <th>{row.price}</th>
+        <th>{row.inStock.toString("0")}</th>
+        <th>{row.quantity}</th>
       </tr>
     )
   })
