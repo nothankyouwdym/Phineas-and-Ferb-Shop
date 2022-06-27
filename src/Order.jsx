@@ -14,9 +14,9 @@ class Order extends Component{
       <h1>Order Page</h1>
       <select multiple onClick={this.handleChange}>
         {data.map((row,index) =>{
-          return(
-            <option value={row.name} id={index}>{row.name}</option>
-          )
+          if(row.inStock === true){
+            return <option value={row.name} id={index}>{row.name}</option>
+          }
         })}
       </select>
       <OrderTable props={this.state}/>
