@@ -28,6 +28,7 @@ const TBody = (props) =>{
       <tr key={index}>
         <th>{row}</th>
         <th>{getPrices(row)}</th>
+        <th><button>Deselect</button></th>
       </tr>
     )
   })
