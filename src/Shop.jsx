@@ -2,10 +2,13 @@ import data from "./Data/data"
 
 const Shop = () =>{
   return(
-    <table>
-      <THead />
-      <TBody />
-    </table>
+    <section>
+      <h1>Shop Page</h1>
+      <table>
+        <THead />
+        <TBody />
+      </table>
+    </section>  
   )
 }
 
