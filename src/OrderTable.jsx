@@ -27,15 +27,12 @@ const THead = () =>{
 }
 
 const TBody = (props) =>{
-  const rows = props.props.props.item.map((row,index) =>{
-    return(
-      <tr key={index}>
-        <th>{row}</th>
-        <th>{getPrices(row)}</th>
-        <th><button onClick={handleClick(row,index)}>Deselect</button></th>
-      </tr>
-    )
-  })
+  { data.map((item, i) => { return (
+    <ReactDeleteRow key={i} data={item} onDelete={ item => { return window.confirm(`Are you sure?`) }}>
+        <td>{item.title}</td>
+        <td>{item.body}</td>
+    </ReactDeleteRow>
+    )}) }
 
   return <tbody>{rows}</tbody>
 }
@@ -55,3 +52,15 @@ const handleClick = () =>{
 
 
 export default OrderTable
+
+
+
+const rows = props.props.props.item.map((row,index) =>{
+  return(
+    <tr key={index}>
+      <th>{row}</th>
+      <th>{getPrices(row)}</th>
+      <th><button onClick={handleClick(row,index)}>Deselect</button></th>
+    </tr>
+  )
+})
