@@ -1,4 +1,7 @@
+import { useRef } from "react"
 import data from "./Data/data"
+
+
 
 const OrderTable = (props) =>{
   return(
@@ -7,6 +10,7 @@ const OrderTable = (props) =>{
         <THead />
         <TBody props={props}/>
       </table>
+
     </section>  
   )
 }
@@ -28,7 +32,7 @@ const TBody = (props) =>{
       <tr key={index}>
         <th>{row}</th>
         <th>{getPrices(row)}</th>
-        <th><button>Deselect</button></th>
+        <th><button onClick={handleClick(row,index)}>Deselect</button></th>
       </tr>
     )
   })
@@ -45,9 +49,9 @@ const getPrices = (row) =>{
   }
 }
 
-
-
-
+const handleClick = () =>{
+  
+}
 
 
 export default OrderTable
